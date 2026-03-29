@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace sample1;
 
 class Personne
@@ -11,6 +13,7 @@ class Program
     static void Main(string[] args)
     {
         var personne = new Personne { Nom = "Gabriel", Age = 22 };
-        Console.WriteLine($"hello {personne.Nom}, you are {personne.Age}");
+        string json = JsonConvert.SerializeObject(personne, Formatting.Indented);
+        Console.WriteLine(json);
     }
 }
